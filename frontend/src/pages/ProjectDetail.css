@@ -1,0 +1,313 @@
+.project-detail { max-width: 1200px; }
+
+.pd-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pd-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.back-btn:hover { color: var(--text); border-color: var(--border2); }
+
+.pd-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+}
+
+.pd-desc {
+  color: var(--text2);
+  font-size: 0.875rem;
+  margin-top: 0.2rem;
+}
+
+.pd-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Tabs */
+.pd-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.pd-tab {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  transition: all 0.15s;
+}
+.pd-tab:hover { background: var(--bg3); color: var(--text); }
+.pd-tab.active { background: rgba(108,99,255,0.15); color: var(--accent3); }
+
+/* Kanban Board */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .kanban-board { grid-template-columns: 1fr; }
+}
+
+.kanban-col {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  overflow: hidden;
+}
+
+.kanban-col-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.col-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.col-dot-todo { background: var(--text3); }
+.col-dot-in_progress { background: var(--info); }
+.col-dot-done { background: var(--success); }
+
+.col-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.col-count {
+  background: var(--bg3);
+  color: var(--text3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.kanban-cards {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 80px;
+}
+
+.col-empty {
+  color: var(--text3);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Task Card */
+.task-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.task-card:hover { border-color: var(--border2); transform: translateY(-1px); box-shadow: var(--shadow); }
+
+.task-card-header {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.task-card-desc {
+  font-size: 0.8rem;
+  color: var(--text2);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.task-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.task-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.assignee-chip {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.task-card-due {
+  font-size: 0.75rem;
+  color: var(--text3);
+}
+.task-card-due.overdue { color: #f87171; }
+
+.task-card-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  padding: 0.2rem;
+  border-radius: 4px;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+.icon-btn:hover { opacity: 1; }
+.icon-btn.danger:hover { background: rgba(239,68,68,0.1); }
+
+/* Table */
+.task-table-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  overflow: auto;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th {
+  text-align: left;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.task-table td {
+  padding: 0.85rem 1.2rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.task-table tr:last-child td { border-bottom: none; }
+.task-table tr:hover td { background: var(--bg3); }
+
+.task-title-cell { font-weight: 500; }
+.overdue-cell { color: #f87171; }
+.table-empty { text-align: center; color: var(--text3); padding: 3rem !important; }
+
+/* Members Modal */
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  background: var(--bg3);
+}
+
+.member-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.member-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-email {
+  font-size: 0.75rem;
+  color: var(--text3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
