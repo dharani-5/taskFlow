@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api'
+  baseURL: 'https://taskflow-production-bb65.up.railway.app/api'
 });
 
 api.interceptors.request.use(config => {
